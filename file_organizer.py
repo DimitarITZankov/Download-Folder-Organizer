@@ -12,3 +12,13 @@ categories = {
     "Archives" : ["zip","rar","tar","gz"],
     "Programs" : ["exe","msi","deb"]
 }
+
+download_dir = "Downloads"
+summary = {}
+
+for category,extensions in categories.items():
+    files = []
+    for ext in extensions:
+        files.extend(glob.glob(os.path.join(download_dir,f"*.{ext}")))
+    os.makedirs(category,exist_ok=True)
+    logging.info(f"Found {len(files)} {category.lower()} files.The transfer started!")

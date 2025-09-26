@@ -6,5 +6,7 @@ Libraries used:
 3.glob - to find files matching specific pattern
 4.logging - to log actions performed by the script
 I created this script because it’s a practical tool that can help people organize their downloads faster and more efficiently.
+How the script works?:
+1.You run the script and automatically putting the files in the 'Downloads' folder into organized folders
 Portfolio information:
 My second script in GitHub written in python

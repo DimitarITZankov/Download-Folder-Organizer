@@ -31,3 +31,6 @@ for category,extensions in categories.items():
             logging.error(e)
     print(f"All files moved to folder: {category}")
     summary[category] = len(files)
+
+    for category,count in summary.items():
+        print(f"In the category {category} folder there are: {count} files")

@@ -22,3 +22,12 @@ for category,extensions in categories.items():
         files.extend(glob.glob(os.path.join(download_dir,f"*.{ext}")))
     os.makedirs(category,exist_ok=True)
     logging.info(f"Found {len(files)} {category.lower()} files.The transfer started!")
+
+    for file in files:
+        try:
+            shutil.move(file,os.path.join(category,os.path.basename(file)))
+        except Exception as e:
+            print(f"Something went wrong! {e}")
+            logging.error(e)
+    print(f"All files moved to folder: {category}")
+    summary[category] = len(files)
